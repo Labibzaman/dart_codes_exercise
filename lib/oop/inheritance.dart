@@ -6,8 +6,14 @@ class BaporFather {
   workfatherDo (){
     print('He is a Businessman');
 
-  }
 
+  }
+  theirName(){
+    print('Kapoor and sons');
+  }
+ fatherCar (){
+    print('He has a Ferrari');
+ }
 
 }
 
@@ -18,6 +24,26 @@ class Son extends BaporFather {
   SonerNijerCar(){
     print("he's own car is Mercedes");
   }
+
+}
+
+class Daughter extends BaporFather{
+
+
+
+  @override
+  theirName() {
+
+    print('still kapoor but now she is Khan');
+
+  }
+
+ @override
+  fatherCar(){
+  super.fatherCar();
+    print('she also has her own toyota');
+  }
+
 }
 
 void main (){
@@ -26,6 +52,10 @@ void main (){
   print(son.bankbalance);
   print(son.car);
   son.SonerNijerCar();
+  son.theirName();
+  Daughter daug = Daughter();
+  daug.theirName();
+  daug.fatherCar();
 
 
 }
