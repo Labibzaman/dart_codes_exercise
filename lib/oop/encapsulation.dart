@@ -4,7 +4,10 @@ class BankAccount {
   double _currentBalance = 0.0;
 
   ///underscore use kore private kore dilam
-  BankAccount(this._BankAccountNumber, this._AccountHolderNAme);
+  BankAccount(this._BankAccountNumber, this._AccountHolderNAme){
+    print(_BankAccountNumber);
+    print(_AccountHolderNAme);
+  }
 
   fshowcurrentBalance() {
     print(_currentBalance);
