@@ -1,54 +1,61 @@
 void main (){
 
   /// For Car 1
- Car car1 = Car("Toyota", 'Sakura', 2014, 5400);
- car1.getBrand('Toyota');
- car1.getAge();
- print(car1.getAge());
- car1.getMilesDriven();
- car1.drive(50);
- print(car1.drive(50));
+ Car car1 = Car("Toyota", 'Camry ', 2020);
+ car1.drive(1000);
 
+ print('Car1: ${car1.getBrand()} ${car1.getModel()} ${car1.getYear()} Miles: ${car1.getMilesDriven()} Age:${car1.getAge()}');
 
 
  ///Car 2
- Car.numberofCars();
+  Car car2 = Car("Honda ", 'Civic  ', 2018 );
+  car2.drive(8000 );
+
+  print('Car2: ${car2.getBrand()} ${car2.getModel()} ${car2.getYear()} Miles: ${car2.getMilesDriven()} Age:${car2.getAge()}');
+
+  ///Car 3
+  Car car3 = Car("Ford", 'F-150', 2015  );
+  car3.drive(15000);
+
+  print('Car3: ${car3.getBrand()} ${car3.getModel()} ${car3.getYear()} Miles: ${car3.getMilesDriven()} Age:${car3.getAge()}');
+
+Car.numberofCars(3);
 
 }
 
 class Car{
-  String? brand;
-  String ? model;
-  int? year;
-  double? milesDriven;
-  Car(this.brand,this.model,this.year,this.milesDriven);
+  String brand;
+  String  model;
+  int year;
+  double milesDriven = 0.0;
 
-  getMilesDriven(){
-    print('Miles:$milesDriven');
+  Car(this.brand,this.model,this.year); ///Using Constractor to initialize variables
 
-  }
-
-  drive(double miles){
-    double result = miles + milesDriven!;
-    return result;
-  }
-
-  getBrand(String brand){
-    return brand;
-  }
-  getModel(){
-    print(model);
-  }
-  getYear(){
-    print( year);
+  void drive(double miles){
+    milesDriven += miles ; ///void returns nothing just calculate
 
   }
-  getAge(){
-    var age = 2023 - year!;
-    return age;
+
+  double getMilesDriven(){
+    return milesDriven; ///now returning Drive value
+
   }
 
-  static numberofCars(){
-    print('Car1');
+  String getBrand(){
+    return brand; /// Brand name is stored here
+  }
+  String getModel(){
+    return model;
+  }
+  int getYear(){
+    return year;
+
+  }
+  int getAge(){ /// this means car's model year will be minus from current year to calculate age
+    return DateTime.now().year - year;
+  }
+
+  static numberofCars(int x){
+    print('Total number of cars created: $x');
   }
 }
