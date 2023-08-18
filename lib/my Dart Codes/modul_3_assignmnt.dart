@@ -3,7 +3,7 @@ void main (){
   /// For Car 1
   //
   /// Here creating an object to access the Car class properties.
- Car car1 = Car("Toyota", 'Camry ', 2020);
+ Car car1 = Car(brand: "Toyota",model: 'Camry ',year: 2020);
 
  ///here the value is entered how many miles it had been drove.
  car1.drive(1000);
@@ -16,7 +16,7 @@ void main (){
  ///For Car 2
  //
  /// Here creating an object to access the Car class properties.
-  Car car2 = Car("Honda ", 'Civic  ', 2018 );
+  Car car2 = Car(brand: "Honda ", model: 'Civic  ', year: 2018 );
 
  ///here the value is entered how many miles it had been drove.
   car2.drive(8000 );
@@ -32,7 +32,7 @@ void main (){
  //
  /// Here creating an object to access the Car class properties.
  //
-  Car car3 = Car("Ford", 'F-150', 2015  );
+  Car car3 = Car(brand: "Ford", model: 'F-150', year: 2015  );
 
   ///here the value is entered how many miles it had been drove.
   car3.drive(15000);
@@ -55,7 +55,7 @@ class Car{
 
   ///Using this keyword to initialize this class variables in the constructor
 
-  Car(this.brand,this.model,this.year);
+  Car({required this.brand, required this.model, required this.year});
 
   ///void returns nothing just calculate
 
