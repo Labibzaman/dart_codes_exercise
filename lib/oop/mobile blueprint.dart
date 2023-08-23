@@ -6,8 +6,17 @@ void main (){
 
 Mobile s21 =Mobile(ram: 12, rom: 256, battery: 4100, camera: 200);
 s21.internet();
+AiMobile samsungAiMOdel = AiMobile(ram: 45, rom: 1000, battery: 6000, camera: 100);
+samsungAiMOdel.AiMobileArt();
+samsungAiMOdel.goodLock();
+
 
 }
+abstract class ExtraFeauture {
+  goodLock();
+}
+
+
 
 class Mobile{
   int ram;
@@ -39,12 +48,21 @@ class Mobile{
 
 }
 
-class AiMobile extends Mobile{
-  AiMobile({required super.ram, required super.rom, required super.battery, required super.camera});
+class AiMobile implements ExtraFeauture{
+  AiMobile({required ram, required rom, required battery, required camera}){
+    print('This is now owrking');
+  }
 
 
   AiMobileArt(){
     print('this a art from ai mobile ');
   }
+
+  @override
+  goodLock() {
+    print('this can make your phone look too good');
+  }
+  
+  
 
 }
