@@ -23,7 +23,7 @@ switch(num2){
     print(result.toInt());
     }else{
       result = num3 -num1;
-      print('-${result.toInt()}');
+      print('-${result.toInt()} ');
     }
     break;
   case '*':
